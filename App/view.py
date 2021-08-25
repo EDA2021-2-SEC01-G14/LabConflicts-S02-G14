@@ -29,7 +29,6 @@ import controller
 from DISClib.ADT import list as lt
 assert cf
 
-
 """
 La vista se encarga de la interacción con el usuario
 Presenta el menu de opciones  y  por cada seleccion
@@ -37,14 +36,13 @@ se hace la solicitud al controlador para ejecutar la
 operación solicitada
 """
 
-
 def printMenu():
     print("Opciones:")
     print("1- Cargar Libros")
     print("2- Cargar Tags")
     # TODO: Modificación de Est-1 en el Lab 2
+    print("3- Cargar Book-Tags")
     print("0- Salir")
-
 
 def loadBooks():
     """
@@ -52,21 +50,19 @@ def loadBooks():
     """
     return controller.loadBooks('GoodReads/books-small.csv')
 
-
 def loadTags():
     """
     Carga los Tags
     """
     return controller.loadTags('GoodReads/tags.csv')
 
-
 def loadBookTags():
     """
     Cargar los Tags de libros
     """
     # TODO: Modificación de Est-1 en el Lab 2
-    pass
-
+    return controller.loadTags('GoodReads/book_tags-small.csv')
+    
 
 """
 Menu principal
@@ -96,3 +92,4 @@ while True:
     else:
         sys.exit(0)
 sys.exit(0)
+
